@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>航空無線周波数</title>
+
+    <meta name="format-detection" content="telephone=no" />
+  
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+  
+    <link rel="shortcut icon" href="favicon.png"/>
+    <link rel="stylesheet" href="fries/themes/holo-dark/holo-dark.min.css" />
+    <link rel="stylesheet" href="css/index.css" />
+
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/jquery.tmpl.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/opal/opal.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/opal/buffer.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/opal/erb.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/opal/observer.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/opal/date.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/opal/file.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/opal/opal-jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/opal/delegate.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/opal/forwardable.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/opal/dir.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/opal/json.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/opal/enumerator.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/opal/native.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/index.rb.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/data.rb.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/opal-jquery.tmpl.js.rb.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/math.rb.js"></script>
+  </head>
+  <body>
+    <div class="page" id="main-page">
+      <header class="action-bar fixed-top">
+        <a href="#" class="app-icon action" data-ignore="true">
+          <i class="icon-fries"></i>
+        </a>
+        <h1 class="title">航空無線周波数</h1>
+      </header>
+  
+      <div class="content">
+        <!-- Add anything here -->
+        <ul class="list inset" id="list">
+        </ul>
+      </div>
+  
+      <div class="dialogs">
+        <!-- This is a requried container for your dialogs. All dialogs that you want to display in this page go here -->
+      </div>
+    </div>
+    <script type="text/x-jquery-tmpl" id="airdrome">
+      <li class="list-divider"><a href="#" data-target="${name}">${name}</a></li>
+    </script>
+
+    <div class="page" id="detail" style="display:none"></div>
+    <script type="text/x-jquery-tmpl" id="detail-template">
+      <header class="action-bar">
+        <a href="#" class="app-icon action" data-ignore="true">
+          <i class="icon-up-button"></i>
+          <i class="icon-fries"></i>
+        </a>
+        <h2 class="title">${name} <span class="subtitle">${icao} / ${iata}</span></h2>
+        <!-- Add action buttons here -->
+      </header>
+  
+      <div class="content">
+        <!-- Add anything here -->
+        <ul class="list inset">
+          {{each frequencies}}
+            <li class="list-item-single-line frequency">
+              <div>
+                <div class="frequency">${value} MHz</div>
+                <div class="callsign">${callsign}</div>
+                <div class="designation">${name}</div>
+              </div>
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+  
+      <div class="dialogs">
+        <!-- This is a requried container for your dialogs. All dialogs that you want to display in this page go here -->
+      </div>
+    </script>
+
+    <script src="fries/fries.min.js"></script>
+  </body>
+</html>

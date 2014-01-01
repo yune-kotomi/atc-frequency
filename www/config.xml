@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="net.yumenosora.AtcFrequency" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>航空無線周波数</name>
+    <description>
+        現在地にて無線が受信できる可能性がある飛行場を表示するAndroidアプリ
+    </description>
+    <author email="yune.kotomi@gmail.com" href="http://ame.yumenosora.net/">
+        殊海夕音/雨上がりの青空を探して
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+</widget>
